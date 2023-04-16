@@ -1,0 +1,3119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.5">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="车辆平台接口1221" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="车辆1210" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1638795149000</longProp>
+        <longProp name="ThreadGroup.end_time">1638795149000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="url请求默认值" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${url}</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">authtoken</stringProp>
+              <stringProp name="Header.value">${token}</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="正式环境---用户定义的变量" enabled="false">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="name" elementType="Argument">
+              <stringProp name="Argument.name">name</stringProp>
+              <stringProp name="Argument.value">testone</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="pwd" elementType="Argument">
+              <stringProp name="Argument.name">pwd</stringProp>
+              <stringProp name="Argument.value">22223333</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="merchant_id" elementType="Argument">
+              <stringProp name="Argument.name">merchant_id</stringProp>
+              <stringProp name="Argument.value">产品测试</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="child_merchant_id" elementType="Argument">
+              <stringProp name="Argument.name">child_merchant_id</stringProp>
+              <stringProp name="Argument.value">产品测试,产品测试001,平台test</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="child_merchant_id1" elementType="Argument">
+              <stringProp name="Argument.name">child_merchant_id1</stringProp>
+              <stringProp name="Argument.value">平台test</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="car_id" elementType="Argument">
+              <stringProp name="Argument.name">car_id</stringProp>
+              <stringProp name="Argument.value">京A11024</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="url" elementType="Argument">
+              <stringProp name="Argument.name">url</stringProp>
+              <stringProp name="Argument.value">cloud.background.adasplus.com</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="测试环境---用户定义的变量" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="name" elementType="Argument">
+              <stringProp name="Argument.name">name</stringProp>
+              <stringProp name="Argument.value">testone</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="pwd" elementType="Argument">
+              <stringProp name="Argument.name">pwd</stringProp>
+              <stringProp name="Argument.value">22223333</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="merchant_id" elementType="Argument">
+              <stringProp name="Argument.name">merchant_id</stringProp>
+              <stringProp name="Argument.value">产品测试专用机构</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="child_merchant_id" elementType="Argument">
+              <stringProp name="Argument.name">child_merchant_id</stringProp>
+              <stringProp name="Argument.value">产品测试专用机构,产品测试289</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="child_merchant_id1" elementType="Argument">
+              <stringProp name="Argument.name">child_merchant_id1</stringProp>
+              <stringProp name="Argument.value">产品测试289</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="car_id" elementType="Argument">
+              <stringProp name="Argument.name">car_id</stringProp>
+              <stringProp name="Argument.value">测A11024</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="url" elementType="Argument">
+              <stringProp name="Argument.name">url</stringProp>
+              <stringProp name="Argument.value">test.cloud.background.adasplus.com</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="获取当天0点--10位时间戳time0" enabled="true">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script">
+
+long nowTime =System.currentTimeMillis();
+long todayStartTime =nowTime - ((nowTime + TimeZone.getDefault().getRawOffset()) % (24 * 60 * 60 * 1000L));
+vars.put(&quot;time0&quot;,String.valueOf(todayStartTime/1000));
+</stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <CriticalSectionController guiclass="CriticalSectionControllerGui" testclass="CriticalSectionController" testname="按照顺序执行" enabled="true">
+          <stringProp name="CriticalSectionController.lockName">global_lock</stringProp>
+        </CriticalSectionController>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="登陆-参数" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="un" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${name}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">un</stringProp>
+              </elementProp>
+              <elementProp name="timestamp" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${__time(/1000,)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">timestamp</stringProp>
+              </elementProp>
+              <elementProp name="pw" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${__MD5(${__time(/1000,)}${__MD5(${pwd},)},)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">pw</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/reportform_login_new</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="提取token" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">token</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;token&quot;: &quot;(.*?)&quot;,</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">未获取到token</stringProp>
+            <stringProp name="RegexExtractor.match_number">0</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="提取商家mi" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">merchantid_mi</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;mi&quot;: &quot;(.*?)&quot;,</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">未获取到商家信息</stringProp>
+            <stringProp name="RegexExtractor.match_number">0</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug PostProcessor" enabled="true">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySamplerProperties">true</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugPostProcessor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="响应中的 unicode转为中文" enabled="true">
+            <stringProp name="TestPlan.comments">注意：在进行正式压力测试时，要记得把BeanShell PostProcessor禁用掉，否则影响测试结果</stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">String s=new String(prev.getResponseData(),&quot;UTF-8&quot;);
+char aChar;
+int len= s.length();
+StringBuffer outBuffer=new StringBuffer(len);
+for(int x =0; x &lt;len;){
+   aChar= s.charAt(x++);
+   if(aChar==&apos;\\&apos;){
+       aChar= s.charAt(x++);
+       if(aChar==&apos;u&apos;){
+           int value =0;
+           for(int i=0;i&lt;4;i++){
+               aChar= s.charAt(x++);
+               switch(aChar){
+                   case&apos;0&apos;:
+                   case&apos;1&apos;:
+                   case&apos;2&apos;:
+                   case&apos;3&apos;:
+                   case&apos;4&apos;:
+                   case&apos;5&apos;:
+                   case&apos;6&apos;:
+                   case&apos;7&apos;:
+                   case&apos;8&apos;:
+                   case&apos;9&apos;:
+                       value=(value &lt;&lt;4)+aChar-&apos;0&apos;;
+                       break;
+                   case&apos;a&apos;:
+                   case&apos;b&apos;:
+                   case&apos;c&apos;:
+                   case&apos;d&apos;:
+                   case&apos;e&apos;:
+                   case&apos;f&apos;:
+                       value=(value &lt;&lt;4)+10+aChar-&apos;a&apos;;
+                       break;
+                   case&apos;A&apos;:
+                   case&apos;B&apos;:
+                   case&apos;C&apos;:
+                   case&apos;D&apos;:
+                   case&apos;E&apos;:
+                   case&apos;F&apos;:
+                       value=(value &lt;&lt;4)+10+aChar-&apos;A&apos;;
+                       break;
+                   default:
+                       throw new IllegalArgumentException(
+                               &quot;Malformed   \\uxxxx  encoding.&quot;);}}
+           outBuffer.append((char) value);}else{
+           if(aChar==&apos;t&apos;)
+               aChar=&apos;\t&apos;;
+           else if(aChar==&apos;r&apos;)
+           aChar=&apos;\r&apos;;
+           else if(aChar==&apos;n&apos;)
+           aChar=&apos;\n&apos;;
+           else if(aChar==&apos;f&apos;)
+           aChar=&apos;\f&apos;;
+           outBuffer.append(aChar);}}else
+       outBuffer.append(aChar);}
+prev.setResponseData(outBuffer.toString());</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="返回文本断言" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="2010542371">&quot;mg&quot;: &quot;登录成功&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言mg: 登录成功--输出日志" enabled="true">
+            <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+//返回结果&quot;mg&quot;: &quot;登录成功&quot;
+String Str = &quot;{\&quot;mg\&quot;: \&quot;登录成功\&quot;&quot;;   //预期结果，需要校验的字段
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str) == false){  
+        //把断言失败置为真   
+        Failure = true;    
+        String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+        log.info(FailureMessage);
+        }</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取全部商家下车辆信息reportform_get_merchant_mapping_carcount" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="merchant_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${merchant_id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">merchant_id</stringProp>
+              </elementProp>
+              <elementProp name="dtoken" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${token}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">dtoken</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/reportform_get_merchant_mapping_carcount</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言ret: 0--输出日志" enabled="true">
+            <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+//返回结果&quot;mg&quot;: &quot;登录成功&quot;
+//预期结果需要写在双引号之间，中间的双引号需要添加\转义
+String Str = &quot;\&quot;ret\&quot;: 0}&quot;;   //预期结果，需要校验的字段
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str) == false){  
+        //把断言失败置为真   
+        Failure = true;    
+        String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+        log.info(FailureMessage);
+        }</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="响应中的 unicode转为中文" enabled="true">
+            <stringProp name="TestPlan.comments">注意：在进行正式压力测试时，要记得把BeanShell PostProcessor禁用掉，否则影响测试结果</stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">String s=new String(prev.getResponseData(),&quot;UTF-8&quot;);
+char aChar;
+int len= s.length();
+StringBuffer outBuffer=new StringBuffer(len);
+for(int x =0; x &lt;len;){
+   aChar= s.charAt(x++);
+   if(aChar==&apos;\\&apos;){
+       aChar= s.charAt(x++);
+       if(aChar==&apos;u&apos;){
+           int value =0;
+           for(int i=0;i&lt;4;i++){
+               aChar= s.charAt(x++);
+               switch(aChar){
+                   case&apos;0&apos;:
+                   case&apos;1&apos;:
+                   case&apos;2&apos;:
+                   case&apos;3&apos;:
+                   case&apos;4&apos;:
+                   case&apos;5&apos;:
+                   case&apos;6&apos;:
+                   case&apos;7&apos;:
+                   case&apos;8&apos;:
+                   case&apos;9&apos;:
+                       value=(value &lt;&lt;4)+aChar-&apos;0&apos;;
+                       break;
+                   case&apos;a&apos;:
+                   case&apos;b&apos;:
+                   case&apos;c&apos;:
+                   case&apos;d&apos;:
+                   case&apos;e&apos;:
+                   case&apos;f&apos;:
+                       value=(value &lt;&lt;4)+10+aChar-&apos;a&apos;;
+                       break;
+                   case&apos;A&apos;:
+                   case&apos;B&apos;:
+                   case&apos;C&apos;:
+                   case&apos;D&apos;:
+                   case&apos;E&apos;:
+                   case&apos;F&apos;:
+                       value=(value &lt;&lt;4)+10+aChar-&apos;A&apos;;
+                       break;
+                   default:
+                       throw new IllegalArgumentException(
+                               &quot;Malformed   \\uxxxx  encoding.&quot;);}}
+           outBuffer.append((char) value);}else{
+           if(aChar==&apos;t&apos;)
+               aChar=&apos;\t&apos;;
+           else if(aChar==&apos;r&apos;)
+           aChar=&apos;\r&apos;;
+           else if(aChar==&apos;n&apos;)
+           aChar=&apos;\n&apos;;
+           else if(aChar==&apos;f&apos;)
+           aChar=&apos;\f&apos;;
+           outBuffer.append(aChar);}}else
+       outBuffer.append(aChar);}
+prev.setResponseData(outBuffer.toString());</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="登陆--获取左侧菜单权限qrySystemMenu" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/manager/roles/qrySystemMenu</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言message: &quot;成功&quot;--输出日志" enabled="true">
+            <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+//返回结果&quot;mg&quot;: &quot;登录成功&quot;
+//预期结果需要写在双引号之间，中间的双引号需要添加\转义
+//预期结果，需要校验的字段
+String Str = &quot;\&quot;message\&quot;:\&quot;成功\&quot;&quot;;     
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str) == false){  
+        //把断言失败置为真   
+        Failure = true;    
+        String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+        log.info(FailureMessage);
+        }</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="登陆--获取功能菜单权限qryRoleSystemPageAction" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/manager/roles/qryRoleSystemPageAction</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言message: &quot;成功&quot;--输出日志" enabled="true">
+            <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+//返回结果&quot;mg&quot;: &quot;登录成功&quot;
+//预期结果需要写在双引号之间，中间的双引号需要添加\转义
+//预期结果，需要校验的字段
+String Str = &quot;\&quot;message\&quot;:\&quot;成功\&quot;&quot;;     
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str) == false){  
+        //把断言失败置为真   
+        Failure = true;    
+        String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+        log.info(FailureMessage);
+        }</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取全部商家getAllMerchant" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/manager/carInfo/getAllMerchant</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言message: &quot;成功&quot;--输出日志" enabled="true">
+            <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+//返回结果&quot;mg&quot;: &quot;登录成功&quot;
+//预期结果需要写在双引号之间，中间的双引号需要添加\转义
+//预期结果，需要校验的字段
+String Str = &quot;\&quot;message\&quot;:\&quot;成功\&quot;&quot;;     
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str) == false){  
+        //把断言失败置为真   
+        Failure = true;    
+        String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+        log.info(FailureMessage);
+        }</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取车辆树getCarListBypage" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;merId&quot;: &quot;&quot;,&quot;pageNum&quot;: 1,&quot;pageSize&quot;: 2500}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/manager/carInfo/getCarListBypage</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言message: &quot;成功&quot;--输出日志" enabled="true">
+            <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+//返回结果&quot;mg&quot;: &quot;登录成功&quot;
+//预期结果需要写在双引号之间，中间的双引号需要添加\转义
+//预期结果，需要校验的字段
+String Str = &quot;\&quot;message\&quot;:\&quot;成功\&quot;&quot;;     
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str) == false){  
+        //把断言失败置为真   
+        Failure = true;    
+        String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+        log.info(FailureMessage);
+        }</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="位置跟踪--获取车辆树商家和其下车辆数/在线数reportform_get_merchant_mapping" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="merchant_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${merchant_id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">merchant_id</stringProp>
+              </elementProp>
+              <elementProp name="dtoken" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${token}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">dtoken</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/reportform_get_merchant_mapping</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言ret: 0--输出日志" enabled="true">
+            <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+//返回结果&quot;mg&quot;: &quot;登录成功&quot;
+//预期结果需要写在双引号之间，中间的双引号需要添加\转义
+String Str = &quot;\&quot;ret\&quot;: 0}&quot;;   //预期结果，需要校验的字段
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str) == false){  
+        //把断言失败置为真   
+        Failure = true;    
+        String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+        log.info(FailureMessage);
+        }</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="位置跟踪--获取报警类型getAlarmCode" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/manager/codeTable/getAlarmCode</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言message: &quot;成功&quot;--输出日志" enabled="true">
+            <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+//返回结果&quot;mg&quot;: &quot;登录成功&quot;
+//预期结果需要写在双引号之间，中间的双引号需要添加\转义
+//预期结果，需要校验的字段
+String Str = &quot;\&quot;message\&quot;:\&quot;成功\&quot;&quot;;     
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str) == false){  
+        //把断言失败置为真   
+        Failure = true;    
+        String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+        log.info(FailureMessage);
+        }</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="位置跟踪---获取车辆${imei}gps：reportform_mongodb_all_gps_info" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="merchant_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${merchant_id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">merchant_id</stringProp>
+              </elementProp>
+              <elementProp name="child_merchant_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${child_merchant_id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">child_merchant_id</stringProp>
+              </elementProp>
+              <elementProp name="car_state" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">0</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">car_state</stringProp>
+              </elementProp>
+              <elementProp name="data" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">[{&quot;car_id&quot;:&quot;${car_id}&quot;,&quot;child_merchant_id&quot;:&quot;${child_merchant_id1}&quot;,&quot;filter_flag&quot;:0}]</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">data</stringProp>
+              </elementProp>
+              <elementProp name="dtoken" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${token}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">dtoken</stringProp>
+              </elementProp>
+              <elementProp name="map_flag" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">1</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">map_flag</stringProp>
+              </elementProp>
+              <elementProp name="rptype_flag" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">0</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">rptype_flag</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/reportform_mongodb_all_gps_info</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言ret: 0--输出日志" enabled="true">
+            <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+//返回结果&quot;mg&quot;: &quot;登录成功&quot;
+//预期结果需要写在双引号之间，中间的双引号需要添加\转义
+String Str = &quot;\&quot;ret\&quot;: 0}&quot;;   //预期结果，需要校验的字段
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str) == false){  
+        //把断言失败置为真   
+        Failure = true;    
+        String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+        log.info(FailureMessage);
+        }</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="提取车牌car_id1" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">car_id1</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;car_id&quot;: &quot;(.*?)&quot;, </stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">未获取到车牌号</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="提取手机号phone_num" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">phone_num</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;phone_num&quot;: &quot;(.*?)&quot;, </stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">未获取到手机号</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="提取唯一码imei" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">imei</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;imei&quot;: &quot;(.*?)&quot;, </stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">未获取到设备唯一码</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="位置跟踪--获取车辆数据getpositionDefaultdata" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;merchantIds&quot;:&quot;&quot;,&quot;carIds&quot;:&quot;${car_id1}&quot;,&quot;imeis&quot;:&quot;${imei}&quot;,&quot;optType&quot;:1,&quot;optObj&quot;:1,&quot;pageNum&quot;:1,&quot;pageSize&quot;:1000}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/manager/position/getpositionDefaultdata</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言message: &quot;成功&quot;--输出日志" enabled="true">
+            <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+//返回结果&quot;mg&quot;: &quot;登录成功&quot;
+//预期结果需要写在双引号之间，中间的双引号需要添加\转义
+//预期结果，需要校验的字段
+String Str = &quot;\&quot;message\&quot;:\&quot;成功\&quot;&quot;;     
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str) == false){  
+        //把断言失败置为真   
+        Failure = true;    
+        String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+        log.info(FailureMessage);
+        }</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="位置跟踪--获取单个车辆信息get_car_info" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="merchant_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${merchant_id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">merchant_id</stringProp>
+              </elementProp>
+              <elementProp name="child_merchant_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${child_merchant_id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">child_merchant_id</stringProp>
+              </elementProp>
+              <elementProp name="username" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${name}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">username</stringProp>
+              </elementProp>
+              <elementProp name="mechanism_name" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">mechanism_name</stringProp>
+              </elementProp>
+              <elementProp name="bind_device_flag" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">2</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">bind_device_flag</stringProp>
+              </elementProp>
+              <elementProp name="state" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">2</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">state</stringProp>
+              </elementProp>
+              <elementProp name="item_total" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">0</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">item_total</stringProp>
+              </elementProp>
+              <elementProp name="page_num" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">1</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">page_num</stringProp>
+              </elementProp>
+              <elementProp name="plate_number" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${car_id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">plate_number</stringProp>
+              </elementProp>
+              <elementProp name="page_item_count" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">10</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">page_item_count</stringProp>
+              </elementProp>
+              <elementProp name="simcard" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">simcard</stringProp>
+              </elementProp>
+              <elementProp name="device_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">device_id</stringProp>
+              </elementProp>
+              <elementProp name="dtoken" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${token}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">dtoken</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/get_car_info</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言ret: 0--输出日志" enabled="true">
+            <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+//返回结果&quot;mg&quot;: &quot;登录成功&quot;
+//预期结果需要写在双引号之间，中间的双引号需要添加\转义
+String Str = &quot;\&quot;ret\&quot;: 0}&quot;;   //预期结果，需要校验的字段
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str) == false){  
+        //把断言失败置为真   
+        Failure = true;    
+        String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+        log.info(FailureMessage);
+        }</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="位置跟踪--消息下发command_send" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="merchant_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${merchant_id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">merchant_id</stringProp>
+              </elementProp>
+              <elementProp name="child_merchant_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${child_merchant_id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">child_merchant_id</stringProp>
+              </elementProp>
+              <elementProp name="username" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${name}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">username</stringProp>
+              </elementProp>
+              <elementProp name="data" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">[{&quot;car_id&quot;:&quot;${car_id}&quot;,&quot;child_merchant_id&quot;:&quot;${child_merchant_id1}&quot;,&quot;filter_flag&quot;:0}]</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">data</stringProp>
+              </elementProp>
+              <elementProp name="command_type" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">2</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">command_type</stringProp>
+              </elementProp>
+              <elementProp name="send_message" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">这是消息下发测试</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">send_message</stringProp>
+              </elementProp>
+              <elementProp name="device_type" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">1</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">device_type</stringProp>
+              </elementProp>
+              <elementProp name="view_type" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">1</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">view_type</stringProp>
+              </elementProp>
+              <elementProp name="dtoken" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${token}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">dtoken</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/command_send</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言ret: 0--输出日志" enabled="true">
+            <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+//返回结果&quot;mg&quot;: &quot;登录成功&quot;
+//预期结果需要写在双引号之间，中间的双引号需要添加\转义
+String Str = &quot;\&quot;ret\&quot;: 0&quot;;   //预期结果，需要校验的字段
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str) == false){  
+        //把断言失败置为真   
+        Failure = true;    
+        String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+        log.info(FailureMessage);
+        }</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="轨迹模式--获取808报警：getTripAlarm" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;stime&quot;:&quot;${time0}&quot;,&quot;etime&quot;:&quot;${__time(/1000,)}&quot;,&quot;plateNumber&quot;:&quot;${car_id}&quot;}&#xd;
+&#xd;
+&#xd;
+&#xd;
+</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/manager/alarm/getTripAlarm</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言message: &quot;成功&quot;--输出日志" enabled="true">
+            <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+//返回结果&quot;mg&quot;: &quot;登录成功&quot;
+//预期结果需要写在双引号之间，中间的双引号需要添加\转义
+//预期结果，需要校验的字段
+String Str = &quot;\&quot;message\&quot;:\&quot;成功\&quot;&quot;;     
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str) == false){  
+        //把断言失败置为真   
+        Failure = true;    
+        String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+        log.info(FailureMessage);
+        }</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="轨迹模式--获取gps数据：reportform_mongodb_trajectory_playback" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="merchant_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${merchant_id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">merchant_id</stringProp>
+              </elementProp>
+              <elementProp name="child_merchant_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${child_merchant_id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">child_merchant_id</stringProp>
+              </elementProp>
+              <elementProp name="start_time" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${time0}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">start_time</stringProp>
+              </elementProp>
+              <elementProp name="end_time" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${__time(/1000,)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">end_time</stringProp>
+              </elementProp>
+              <elementProp name="car_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${car_id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">car_id</stringProp>
+              </elementProp>
+              <elementProp name="tripid" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">tripid</stringProp>
+              </elementProp>
+              <elementProp name="dtoken" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${token}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">dtoken</stringProp>
+              </elementProp>
+              <elementProp name="page_num" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">1</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">page_num</stringProp>
+              </elementProp>
+              <elementProp name="page_item_count" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">1</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">page_item_count</stringProp>
+              </elementProp>
+              <elementProp name="item_total" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">0</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">item_total</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/reportform_mongodb_trajectory_playback</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言msg: ReportTrajectoryPlayback OK--输出日志" enabled="true">
+            <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+//返回结果&quot;mg&quot;: &quot;登录成功&quot;
+//预期结果需要写在双引号之间，中间的双引号需要添加\转义
+String Str = &quot;\&quot;msg\&quot;: \&quot;ReportTrajectoryPlayback OK\&quot;&quot;;   //预期结果，需要校验的字段
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str) == false){  
+        //把断言失败置为真   
+        Failure = true;    
+        String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+        log.info(FailureMessage);
+        }</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="主动安全--获取报警数据：reportform_mongodb_event_show" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="merchant_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${merchant_id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">merchant_id</stringProp>
+              </elementProp>
+              <elementProp name="child_merchant_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${child_merchant_id1}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">child_merchant_id</stringProp>
+              </elementProp>
+              <elementProp name="flag" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">0</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">flag</stringProp>
+              </elementProp>
+              <elementProp name="page_num" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">1</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">page_num</stringProp>
+              </elementProp>
+              <elementProp name="car_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">car_id</stringProp>
+              </elementProp>
+              <elementProp name="risk_level" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">risk_level</stringProp>
+              </elementProp>
+              <elementProp name="idcard" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">idcard</stringProp>
+              </elementProp>
+              <elementProp name="start_time" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${time0}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">start_time</stringProp>
+              </elementProp>
+              <elementProp name="end_time" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${__time(/1000,)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">end_time</stringProp>
+              </elementProp>
+              <elementProp name="rp_type" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">101,102,103,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,301,302,303,304,305,306,307,308,309,310,311,312,313,314,315,316,317,318,319,320,321,322,323,324,325,326,327,328,329,330,331,332,333,401,402,403,404,405,406,407,408,409,501,502,503,504,505,506,601,701,702</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">rp_type</stringProp>
+              </elementProp>
+              <elementProp name="dtoken" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${token}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">dtoken</stringProp>
+              </elementProp>
+              <elementProp name="data" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">[{&quot;car_id&quot;:&quot;${car_id}&quot;,&quot;child_merchant_id&quot;:&quot;${child_merchant_id1}&quot;,&quot;filter_flag&quot;:0}]</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">data</stringProp>
+              </elementProp>
+              <elementProp name="drname" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">drname</stringProp>
+              </elementProp>
+              <elementProp name="screen_flag" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">0</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">screen_flag</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/reportform_mongodb_event_show</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="TestPlan.comments">主动安全/报警明细</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言ret: 0或ret: -2--输出日志" enabled="true">
+            <stringProp name="TestPlan.comments">当预警有数据，返回ret:0；当预警数据为空时，返回ret:-2</stringProp>
+            <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+//返回结果&quot;mg&quot;: &quot;登录成功&quot;
+//预期结果需要写在双引号之间，中间的双引号需要添加\转义
+String Str0 = &quot;\&quot;ret\&quot;: 0&quot;;   //预期结果，需要校验的字段;当预警有数据，返回ret:0
+String Str2 = &quot;\&quot;ret\&quot;: -2&quot;;   //预期结果，需要校验的字段；当预警数据为空时，返回ret:-2
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str0) == false){  
+//        当返回值不包含str0，则断言返回值是否包含str2
+        if(response.contains(Str2) == false){
+        	//把断言失败置为真  
+        	Failure = true;    
+        	String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        	FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str0 + &quot;或者&quot;+ Str2 + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+       	log.info(FailureMessage);
+        	}
+	}</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="提取主动安全报警数据的etid" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">etid</stringProp>
+            <stringProp name="RegexExtractor.regex"> &quot;id&quot;: &quot;(.*?)&quot;,</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">未获取到报警数据id</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="主动安全--报警处理下发：reportform_mongodb_deal_event" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="deal_mode" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">1</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">deal_mode</stringProp>
+              </elementProp>
+              <elementProp name="etid" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${etid}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">etid</stringProp>
+              </elementProp>
+              <elementProp name="cid" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">cid</stringProp>
+              </elementProp>
+              <elementProp name="tts_message" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">标记为人工处理</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">tts_message</stringProp>
+              </elementProp>
+              <elementProp name="deal_person" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${name}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">deal_person</stringProp>
+              </elementProp>
+              <elementProp name="time" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${__time(/1000,)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">time</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/reportform_mongodb_deal_event</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言ret: 0--输出日志" enabled="true">
+            <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+//返回结果&quot;mg&quot;: &quot;登录成功&quot;
+//预期结果需要写在双引号之间，中间的双引号需要添加\转义
+String Str = &quot;\&quot;ret\&quot;: 0}&quot;;   //预期结果，需要校验的字段；当预警处理成功，返回ret:0
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str) == false){  
+        //把断言失败置为真   
+        Failure = true;    
+        String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+        log.info(FailureMessage);
+        }</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="主动安全--报警资料获取：reportform_mongodb_aggregation_event_count" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="merchant_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${merchant_id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">merchant_id</stringProp>
+              </elementProp>
+              <elementProp name="child_merchant_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${child_merchant_id1}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">child_merchant_id</stringProp>
+              </elementProp>
+              <elementProp name="data" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">[{&quot;car_id&quot;:&quot;${car_id}&quot;,&quot;child_merchant_id&quot;:&quot;${child_merchant_id1}&quot;,&quot;filter_flag&quot;:0}]</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">data</stringProp>
+              </elementProp>
+              <elementProp name="start_time" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${time0}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">start_time</stringProp>
+              </elementProp>
+              <elementProp name="end_time" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${__time(/1000,)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">end_time</stringProp>
+              </elementProp>
+              <elementProp name="car_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">car_id</stringProp>
+              </elementProp>
+              <elementProp name="userid" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">userid</stringProp>
+              </elementProp>
+              <elementProp name="rp_type" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">101,102,103,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,301,302,303,304,305,306,307,308,309,310,311,312,313,314,315,316,317,318,319,320,321,322,323,324,325,326,327,328,329,330,331,332,333,401,402,403,404,405,406,407,408,409,501,502,503,504,505,506,601,701,702</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">rp_type</stringProp>
+              </elementProp>
+              <elementProp name="item_total" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">0</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">item_total</stringProp>
+              </elementProp>
+              <elementProp name="page_num" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">1</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">page_num</stringProp>
+              </elementProp>
+              <elementProp name="filer_flag" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">0</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">filer_flag</stringProp>
+              </elementProp>
+              <elementProp name="dtoken" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${token}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">dtoken</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/reportform_mongodb_aggregation_event_count</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="TestPlan.comments">主动安全/报警明细</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言ret: 0或ret: -2--输出日志" enabled="true">
+            <stringProp name="TestPlan.comments">当预警有数据，返回ret:0；当预警数据为空时，返回ret:-2</stringProp>
+            <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+//返回结果&quot;mg&quot;: &quot;登录成功&quot;
+//预期结果需要写在双引号之间，中间的双引号需要添加\转义
+String Str0 = &quot;\&quot;ret\&quot;: 0&quot;;   //预期结果，需要校验的字段;当报警资料有数据，返回ret:0
+String Str2 = &quot;\&quot;ret\&quot;: -2&quot;;   //预期结果，需要校验的字段；当报警资料数据为空时，返回ret:-2
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str0) == false){  
+//        当返回值不包含str0，则断言返回值是否包含str2
+        if(response.contains(Str2) == false){
+        	//把断言失败置为真  
+        	Failure = true;    
+        	String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        	FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str0 + &quot;或者&quot;+ Str2 + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+       	log.info(FailureMessage);
+        	}
+	}</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="提取报警数Alarm _count" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">Alarm _count</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;count&quot;: (.*?),</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">未获取到报警资料中的报警数量</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="主动安全--报警资料图片/视频获取reportform_mongodb_mediadata" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="child_merchant_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${child_merchant_id1}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">child_merchant_id</stringProp>
+              </elementProp>
+              <elementProp name="start_time" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${time0}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">start_time</stringProp>
+              </elementProp>
+              <elementProp name="end_time" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${__time(/1000,)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">end_time</stringProp>
+              </elementProp>
+              <elementProp name="imei_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${imei}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">imei_id</stringProp>
+              </elementProp>
+              <elementProp name="userid" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">userid</stringProp>
+              </elementProp>
+              <elementProp name="rp_type" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">101,102,103,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,301,302,303,304,305,306,307,308,309,310,311,312,313,314,315,316,317,318,319,320,321,322,323,324,325,326,327,328,329,330,331,332,333,401,402,403,404,405,406,407,408,409,501,502,503,504,505,506,601,701,702</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">rp_type</stringProp>
+              </elementProp>
+              <elementProp name="item_total" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${Alarm _count}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">item_total</stringProp>
+              </elementProp>
+              <elementProp name="page_num" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">1</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">page_num</stringProp>
+              </elementProp>
+              <elementProp name="dtoken" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${token}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">dtoken</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/reportform_mongodb_mediadata</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言ret: 0或ret: -2--输出日志" enabled="true">
+            <stringProp name="TestPlan.comments">当预警有数据，返回ret:0；当预警数据为空时，返回ret:-2</stringProp>
+            <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+//返回结果&quot;mg&quot;: &quot;登录成功&quot;
+//预期结果需要写在双引号之间，中间的双引号需要添加\转义
+String Str0 = &quot;\&quot;ret\&quot;: 0&quot;;   //预期结果，需要校验的字段;当报警资料有数据，返回ret:0
+String Str2 = &quot;\&quot;ret\&quot;: -2&quot;;   //预期结果，需要校验的字段；当报警资料数据为空时，返回ret:-2
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str0) == false){  
+//        当返回值不包含str0，则断言返回值是否包含str2
+        if(response.contains(Str2) == false){
+        	//把断言失败置为真  
+        	Failure = true;    
+        	String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        	FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str0 + &quot;或者&quot;+ Str2 + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+       	log.info(FailureMessage);
+        	}
+	}</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="行程查询--reportform_mongodb_ed_tripid_show" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="child_merchant_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${child_merchant_id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">child_merchant_id</stringProp>
+              </elementProp>
+              <elementProp name="car_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">car_id</stringProp>
+              </elementProp>
+              <elementProp name="data" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">[{&quot;car_id&quot;:&quot;${car_id}&quot;,&quot;child_merchant_id&quot;:&quot;${child_merchant_id1}&quot;,&quot;filter_flag&quot;:0}]</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">data</stringProp>
+              </elementProp>
+              <elementProp name="start_time" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${time0}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">start_time</stringProp>
+              </elementProp>
+              <elementProp name="end_time" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${__time(/1000,)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">end_time</stringProp>
+              </elementProp>
+              <elementProp name="page" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">1</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">page</stringProp>
+              </elementProp>
+              <elementProp name="idcard" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">idcard</stringProp>
+              </elementProp>
+              <elementProp name="drname" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">drname</stringProp>
+              </elementProp>
+              <elementProp name="dtoken" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${token}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">dtoken</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/reportform_mongodb_ed_tripid_show</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言ret: 0或ret: -2--输出日志" enabled="true">
+            <stringProp name="TestPlan.comments">当预警有数据，返回ret:0；当预警数据为空时，返回ret:-2</stringProp>
+            <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+//返回结果&quot;mg&quot;: &quot;登录成功&quot;
+//预期结果需要写在双引号之间，中间的双引号需要添加\转义
+String Str0 = &quot;\&quot;ret\&quot;: 0&quot;;   //预期结果，需要校验的字段;当行程有数据，返回ret:0
+String Str2 = &quot;\&quot;ret\&quot;: -4&quot;;   //预期结果，需要校验的字段；当行程数据为空时，返回ret:-4
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str0) == false){  
+//        当返回值不包含str0，则断言返回值是否包含str2
+        if(response.contains(Str2) == false){
+        	//把断言失败置为真  
+        	Failure = true;    
+        	String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        	FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str0 + &quot;或者&quot;+ Str2 + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+       	log.info(FailureMessage);
+        	}
+	}</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="提取行程中的tripid" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">tripid</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;tripid&quot;: (.*?), </stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">未获取到tripid</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="获取行程中的tripid_id" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">tripid_id</stringProp>
+            <stringProp name="RegexExtractor.regex"> &quot;id&quot;: &quot;(.*?)&quot;, </stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">未获取到行程中的id字符串</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="行程查询--获取当前行程中的风险分布报警/reportform_mongodb_trip_map_show" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="merchant_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${merchant_id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">merchant_id</stringProp>
+              </elementProp>
+              <elementProp name="id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${tripid_id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">id</stringProp>
+              </elementProp>
+              <elementProp name="type" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">101,102,103,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,301,302,303,304,305,306,307,308,309,310,311,312,313,314,315,316,317,318,319,320,321,322,323,324,325,326,327,328,329,330,331,332,333,401,402,403,404,405,406,407,408,409,501,502,503,504,505,506,601,701,702</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">type</stringProp>
+              </elementProp>
+              <elementProp name="flag" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">1</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">flag</stringProp>
+              </elementProp>
+              <elementProp name="dtoken" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${token}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">dtoken</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/reportform_mongodb_trip_map_show</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言返回的id是否上一接口获取到的id一致--输出日志" enabled="true">
+            <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+//返回结果&quot;mg&quot;: &quot;登录成功&quot;
+//预期结果需要写在双引号之间，中间的双引号需要添加\转义
+ //预期结果，需要校验的字段；风险分布接口中的返回的id是否和reportform_mongodb_ed_tripid_show中返回的id一致
+String Str = &quot;\&quot;id\&quot;: \&quot;${tripid_id}\&quot;&quot;;  
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str) == false){  
+        //把断言失败置为真   
+        Failure = true;    
+        String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+        log.info(FailureMessage);
+        }</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="行程查询--获取gps数据:reportform_gps_trail" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="child_merchant_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${child_merchant_id1}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">child_merchant_id</stringProp>
+              </elementProp>
+              <elementProp name="imei" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${imei}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">imei</stringProp>
+              </elementProp>
+              <elementProp name="tripid" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${tripid}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">tripid</stringProp>
+              </elementProp>
+              <elementProp name="dtoken" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${token}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">dtoken</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/reportform_gps_trail</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言msg: &quot;ReportGpsTrail ok&quot;--输出日志" enabled="true">
+            <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+//返回结果&quot;mg&quot;: &quot;登录成功&quot;
+//预期结果需要写在双引号之间，中间的双引号需要添加\转义
+String Str = &quot;\&quot;msg\&quot;: \&quot;ReportGpsTrail ok\&quot;&quot;;   //预期结果，需要校验的字段；当行程中的gps数据返回成功，返回ret:0和msg: &quot;ReportGpsTrail ok&quot;
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str) == false){  
+        //把断言失败置为真   
+        Failure = true;    
+        String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+        log.info(FailureMessage);
+        }</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="报表分析--报警明细-获取808报警类型/getAlarmCode" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/manager/codeTable/getAlarmCode</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="正则表达式提取器" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">vals</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;val&quot;:(.*?),</stringProp>
+            <stringProp name="RegexExtractor.template">$-1$</stringProp>
+            <stringProp name="RegexExtractor.default">未获取到808平台报警类型</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言message: &quot;成功&quot;--输出日志" enabled="true">
+            <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+
+//预期结果需要写在双引号之间，中间的双引号需要添加\转义
+//预期结果，需要校验的字段
+String Str = &quot;\&quot;message\&quot;:\&quot;成功\&quot;&quot;;     
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str) == false){  
+        //把断言失败置为真   
+        Failure = true;    
+        String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+        log.info(FailureMessage);
+        }</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="报表分析-报警明细-获取报警数据列表/getPlateAlarmList" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;alarm_time&quot;:&quot;&quot;,&quot;car_type&quot;:&quot;&quot;,&quot;ed_source&quot;:&quot;&quot;,&quot;end_time&quot;:&quot;${__time(/1000,)}&quot;,&quot;industry_type&quot;:&quot;&quot;,&quot;merchant_id&quot;:&quot;${child_merchant_id}&quot;,&quot;optType&quot;:0,&quot;page_num&quot;:1,&quot;page_size&quot;:15,&quot;plate_number&quot;:&quot;&quot;,&quot;rp_type&quot;:&quot;101,102,103,104，801,802,803,804,805&quot;,&quot;speed&quot;:&quot;&quot;,&quot;start_time&quot;:&quot;${time0}&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/manager/alarm/getPlateAlarmList</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言message: &quot;成功&quot;--输出日志" enabled="true">
+            <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+//返回结果&quot;mg&quot;: &quot;登录成功&quot;
+//预期结果需要写在双引号之间，中间的双引号需要添加\转义
+//预期结果，需要校验的字段
+String Str = &quot;\&quot;message\&quot;:\&quot;成功\&quot;&quot;;     
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str) == false){  
+        //把断言失败置为真   
+        Failure = true;    
+        String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+        log.info(FailureMessage);
+        }</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="提取808报警alarm_id" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">alarm_id</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;id&quot;:&quot;(.*?)&quot;,</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">未获取到提取808报警alarm_id</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="报表分析--报警明细--报警处理下发" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;alarmItemList&quot;:[{&quot;id&quot;:&quot;${alarm_id}&quot;,&quot;phoneNum&quot;:&quot;012345678999&quot;}],&quot;alarmType&quot;: 1,&quot;optType&quot;: 2}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/manager/alarm/dealAlarm</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言message: &quot;成功&quot;--输出日志" enabled="true">
+            <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+//返回结果&quot;mg&quot;: &quot;登录成功&quot;
+//预期结果需要写在双引号之间，中间的双引号需要添加\转义
+//预期结果，需要校验的字段
+String Str = &quot;\&quot;message\&quot;:\&quot;成功\&quot;&quot;;     
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str) == false){  
+        //把断言失败置为真   
+        Failure = true;    
+        String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+        log.info(FailureMessage);
+        }</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="报表分析--获取日志/platform_log_search" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="merchant_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${merchant_id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">merchant_id</stringProp>
+              </elementProp>
+              <elementProp name="child_merchant_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${child_merchant_id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">child_merchant_id</stringProp>
+              </elementProp>
+              <elementProp name="start_time" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${time0}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">start_time</stringProp>
+              </elementProp>
+              <elementProp name="end_time" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${__time(/1000,)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">end_time</stringProp>
+              </elementProp>
+              <elementProp name="ctype" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">0102</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">ctype</stringProp>
+              </elementProp>
+              <elementProp name="data" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">[{&quot;car_id&quot;:&quot;${car_id}&quot;,&quot;child_merchant_id&quot;:&quot;${child_merchant_id1}&quot;,&quot;filter_flag&quot;:0}]</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">data</stringProp>
+              </elementProp>
+              <elementProp name="page_num" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">1</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">page_num</stringProp>
+              </elementProp>
+              <elementProp name="item_total" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">0</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">item_total</stringProp>
+              </elementProp>
+              <elementProp name="page_item_count" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">15</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">page_item_count</stringProp>
+              </elementProp>
+              <elementProp name="dtoken" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${token}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">dtoken</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/platform_log_search</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言ret: 0--输出日志" enabled="true">
+            <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+
+//预期结果需要写在双引号之间，中间的双引号需要添加\转义
+String Str = &quot;\&quot;ret\&quot;: 0}&quot;;   //预期结果，需要校验的字段
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str) == false){  
+        //把断言失败置为真   
+        Failure = true;    
+        String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+        log.info(FailureMessage);
+        }</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="只登陆一次，接口持续运行" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1640076484000</longProp>
+        <longProp name="ThreadGroup.end_time">1640076484000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="url请求默认值" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${url}</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">authtoken</stringProp>
+              <stringProp name="Header.value">${token}</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="测试环境---用户定义的变量" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="name" elementType="Argument">
+              <stringProp name="Argument.name">name</stringProp>
+              <stringProp name="Argument.value">testone</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="pwd" elementType="Argument">
+              <stringProp name="Argument.name">pwd</stringProp>
+              <stringProp name="Argument.value">22223333</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="merchant_id" elementType="Argument">
+              <stringProp name="Argument.name">merchant_id</stringProp>
+              <stringProp name="Argument.value">产品测试专用机构</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="child_merchant_id" elementType="Argument">
+              <stringProp name="Argument.name">child_merchant_id</stringProp>
+              <stringProp name="Argument.value">产品测试专用机构,产品测试289</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="child_merchant_id1" elementType="Argument">
+              <stringProp name="Argument.name">child_merchant_id1</stringProp>
+              <stringProp name="Argument.value">产品测试289</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="car_id" elementType="Argument">
+              <stringProp name="Argument.name">car_id</stringProp>
+              <stringProp name="Argument.value">测W11024</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="url" elementType="Argument">
+              <stringProp name="Argument.name">url</stringProp>
+              <stringProp name="Argument.value">test.cloud.background.adasplus.com</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="获取当天0点--10位时间戳time0" enabled="true">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script">
+
+long nowTime =System.currentTimeMillis();
+long todayStartTime =nowTime - ((nowTime + TimeZone.getDefault().getRawOffset()) % (24 * 60 * 60 * 1000L));
+vars.put(&quot;time0&quot;,String.valueOf(todayStartTime/1000));
+</stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <CriticalSectionController guiclass="CriticalSectionControllerGui" testclass="CriticalSectionController" testname="按照顺序执行" enabled="false">
+          <stringProp name="CriticalSectionController.lockName">global_lock</stringProp>
+        </CriticalSectionController>
+        <hashTree/>
+        <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="仅一次控制器" enabled="true"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="登陆-参数" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="un" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${name}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">un</stringProp>
+                </elementProp>
+                <elementProp name="timestamp" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${__time(/1000,)}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">timestamp</stringProp>
+                </elementProp>
+                <elementProp name="pw" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${__MD5(${__time(/1000,)}${__MD5(${pwd},)},)}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">pw</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/reportform_login_new</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug PostProcessor" enabled="true">
+              <boolProp name="displayJMeterProperties">false</boolProp>
+              <boolProp name="displayJMeterVariables">true</boolProp>
+              <boolProp name="displaySamplerProperties">true</boolProp>
+              <boolProp name="displaySystemProperties">false</boolProp>
+            </DebugPostProcessor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="提取token" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">token</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;token&quot;: &quot;(.*?)&quot;,</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">未获取到token</stringProp>
+              <stringProp name="RegexExtractor.match_number">0</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="提取商家mi" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">merchantid_mi</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;mi&quot;: &quot;(.*?)&quot;,</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">未获取到商家信息</stringProp>
+              <stringProp name="RegexExtractor.match_number">0</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="响应中的 unicode转为中文" enabled="true">
+              <stringProp name="TestPlan.comments">注意：在进行正式压力测试时，要记得把BeanShell PostProcessor禁用掉，否则影响测试结果</stringProp>
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">String s=new String(prev.getResponseData(),&quot;UTF-8&quot;);
+char aChar;
+int len= s.length();
+StringBuffer outBuffer=new StringBuffer(len);
+for(int x =0; x &lt;len;){
+   aChar= s.charAt(x++);
+   if(aChar==&apos;\\&apos;){
+       aChar= s.charAt(x++);
+       if(aChar==&apos;u&apos;){
+           int value =0;
+           for(int i=0;i&lt;4;i++){
+               aChar= s.charAt(x++);
+               switch(aChar){
+                   case&apos;0&apos;:
+                   case&apos;1&apos;:
+                   case&apos;2&apos;:
+                   case&apos;3&apos;:
+                   case&apos;4&apos;:
+                   case&apos;5&apos;:
+                   case&apos;6&apos;:
+                   case&apos;7&apos;:
+                   case&apos;8&apos;:
+                   case&apos;9&apos;:
+                       value=(value &lt;&lt;4)+aChar-&apos;0&apos;;
+                       break;
+                   case&apos;a&apos;:
+                   case&apos;b&apos;:
+                   case&apos;c&apos;:
+                   case&apos;d&apos;:
+                   case&apos;e&apos;:
+                   case&apos;f&apos;:
+                       value=(value &lt;&lt;4)+10+aChar-&apos;a&apos;;
+                       break;
+                   case&apos;A&apos;:
+                   case&apos;B&apos;:
+                   case&apos;C&apos;:
+                   case&apos;D&apos;:
+                   case&apos;E&apos;:
+                   case&apos;F&apos;:
+                       value=(value &lt;&lt;4)+10+aChar-&apos;A&apos;;
+                       break;
+                   default:
+                       throw new IllegalArgumentException(
+                               &quot;Malformed   \\uxxxx  encoding.&quot;);}}
+           outBuffer.append((char) value);}else{
+           if(aChar==&apos;t&apos;)
+               aChar=&apos;\t&apos;;
+           else if(aChar==&apos;r&apos;)
+           aChar=&apos;\r&apos;;
+           else if(aChar==&apos;n&apos;)
+           aChar=&apos;\n&apos;;
+           else if(aChar==&apos;f&apos;)
+           aChar=&apos;\f&apos;;
+           outBuffer.append(aChar);}}else
+       outBuffer.append(aChar);}
+prev.setResponseData(outBuffer.toString());</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="返回文本断言" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="2010542371">&quot;mg&quot;: &quot;登录成功&quot;</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言mg: 登录成功--输出日志" enabled="true">
+              <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+//返回结果&quot;mg&quot;: &quot;登录成功&quot;
+String Str = &quot;{\&quot;mg\&quot;: \&quot;登录成功\&quot;&quot;;   //预期结果，需要校验的字段
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str) == false){  
+        //把断言失败置为真   
+        Failure = true;    
+        String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+        log.info(FailureMessage);
+        }</stringProp>
+              <stringProp name="BeanShellAssertion.filename"></stringProp>
+              <stringProp name="BeanShellAssertion.parameters"></stringProp>
+              <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+            </BeanShellAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <stringProp name="LoopController.loops">10</stringProp>
+        </LoopController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="登陆--获取左侧菜单权限qrySystemMenu第${__counter(,)}次运行" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/manager/roles/qrySystemMenu</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言message: &quot;成功&quot;--输出日志" enabled="true">
+              <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+//返回结果&quot;mg&quot;: &quot;登录成功&quot;
+//预期结果需要写在双引号之间，中间的双引号需要添加\转义
+//预期结果，需要校验的字段
+String Str = &quot;\&quot;message\&quot;:\&quot;成功\&quot;&quot;;     
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str) == false){  
+        //把断言失败置为真   
+        Failure = true;    
+        String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+        log.info(FailureMessage);
+        }</stringProp>
+              <stringProp name="BeanShellAssertion.filename"></stringProp>
+              <stringProp name="BeanShellAssertion.parameters"></stringProp>
+              <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+            </BeanShellAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="登陆--获取功能菜单权限qryRoleSystemPageAction第${__counter(,)}次运行" enabled="false">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/manager/roles/qryRoleSystemPageAction</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言message: &quot;成功&quot;--输出日志" enabled="true">
+              <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+//返回结果&quot;mg&quot;: &quot;登录成功&quot;
+//预期结果需要写在双引号之间，中间的双引号需要添加\转义
+//预期结果，需要校验的字段
+String Str = &quot;\&quot;message\&quot;:\&quot;成功\&quot;&quot;;     
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str) == false){  
+        //把断言失败置为真   
+        Failure = true;    
+        String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+        log.info(FailureMessage);
+        }</stringProp>
+              <stringProp name="BeanShellAssertion.filename"></stringProp>
+              <stringProp name="BeanShellAssertion.parameters"></stringProp>
+              <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+            </BeanShellAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取车辆树getCarListBypage第${__counter(,)}次运行" enabled="false">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;merId&quot;: &quot;&quot;,&quot;pageNum&quot;: 1,&quot;pageSize&quot;: 2500}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/manager/carInfo/getCarListBypage</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="断言message: &quot;成功&quot;--输出日志" enabled="true">
+              <stringProp name="BeanShellAssertion.query">String response = &quot;&quot;;
+
+//返回结果&quot;mg&quot;: &quot;登录成功&quot;
+//预期结果需要写在双引号之间，中间的双引号需要添加\转义
+//预期结果，需要校验的字段
+String Str = &quot;\&quot;message\&quot;:\&quot;成功\&quot;&quot;;     
+
+response = prev.getResponseDataAsString();    //获取当前请求响应结果
+  
+if(response == &quot;&quot;){  
+    Failure = true;  
+    FailureMessage =   &quot;系统无响应，获取不到响应数据！&quot;;  
+    log.info(FailureMessage);
+    //对比数据库内容和响应内容，私用euqals方法判断是否一致  
+    }
+
+//完全匹配：equals；包含匹配：contains
+else if(response.contains(Str) == false){  
+        //把断言失败置为真   
+        Failure = true;    
+        String Msg = &quot;\n系统返回响应结果与期望结果不一致！请排查是性能问题，还是程序代码问题&quot;;       		          
+        FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果:\n&quot; + Str + &quot;\n&quot; + &quot;响应内容: \n&quot; + response +&quot;\n&quot;;   
+        log.info(FailureMessage);
+        }</stringProp>
+              <stringProp name="BeanShellAssertion.filename"></stringProp>
+              <stringProp name="BeanShellAssertion.parameters"></stringProp>
+              <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+            </BeanShellAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
